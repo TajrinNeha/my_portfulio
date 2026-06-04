@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tajrin Rahman Neha | Portfolio</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;line-height:1.6;background:#f5f7fb;color:#222;transition:.3s}
+header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:80px 20px;text-align:center}
+nav{position:sticky;top:0;background:#111827;padding:12px;text-align:center}
+nav a{color:#fff;text-decoration:none;margin:0 12px}
+section{padding:50px 10%;}
+.card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);margin-top:15px}
+h2{margin-bottom:15px;color:#1e3a8a}
+.skills .item{margin:12px 0}
+.bar{background:#ddd;height:18px;border-radius:20px}
+.fill{height:18px;border-radius:20px;background:#2563eb}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.project{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.contact a{text-decoration:none;color:#2563eb}
+footer{text-align:center;background:#111827;color:#fff;padding:20px}
+button{padding:10px 16px;border:none;border-radius:8px;cursor:pointer}
+.dark{background:#121212;color:#eee}
+.dark .card,.dark .project{background:#1f2937;color:#fff}
+.dark h2{color:#60a5fa}
+.dark nav{background:#000}
+</style>
+</head>
+<body>
+<nav>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#education">Education</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<button onclick="toggleMode()">🌙</button>
+</nav>
+
+<header>
+<h1>Tajrin Rahman Neha</h1>
+<h3 id="typing"></h3>
+<p>CSE Student at Varendra University</p>
+</header>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+I am Tajrin Rahman Neha, a Computer Science and Engineering student at Varendra University. I am passionate about software development, problem solving, web technologies and continuous learning.
+</div>
+</section>
+
+<section id="skills" class="skills">
+<h2>Skills</h2>
+<div class="card">
+<div class="item">Java<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div class="item">C++<div class="bar"><div class="fill" style="width:85%"></div></div></div>
+<div class="item">Python<div class="bar"><div class="fill" style="width:80%"></div></div></div>
+<div class="item">HTML/CSS<div class="bar"><div class="fill" style="width:90%"></div></div></div>
+<div class="item">JavaScript<div class="bar"><div class="fill" style="width:75%"></div></div></div>
+<div class="item">PHP<div class="bar"><div class="fill" style="width:70%"></div></div></div>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+<div class="card">
+<h3>Varendra University</h3>
+<p>B.Sc. in Computer Science & Engineering (CSE)</p>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="projects">
+<div class="project"><h3>Student Management System</h3><p>Java-based application.</p></div>
+<div class="project"><h3>Portfolio Website</h3><p>Responsive personal portfolio.</p></div>
+<div class="project"><h3>Task Management App</h3><p>Task organizer using Java.</p></div>
+<div class="project"><h3>DSP Academic Project</h3><p>Signal processing related project.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Achievements</h2>
+<div class="card">
+<ul>
+<li>Completed multiple academic programming projects.</li>
+<li>Learning software engineering and web development.</li>
+<li>Strong interest in Java programming and problem solving.</li>
+</ul>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Contact</h2>
+<div class="card">
+<p>Email: <a href="mailto:Tajrin.neha15@gmail.com">Tajrin.neha15@gmail.com</a></p>
+<p>Phone: 01852680720</p>
+<p>University: Varendra University</p>
+</div>
+</section>
+
+<footer>
+© 2026 Tajrin Rahman Neha | Portfolio Website
+</footer>
+
+<script>
+const txt="Java Developer | Web Development Enthusiast | CSE Student";
+let i=0;
+function type(){
+ if(i<txt.length){
+  document.getElementById("typing").innerHTML+=txt.charAt(i);
+  i++;
+  setTimeout(type,80);
+ }
+}
+type();
+
+function toggleMode(){
+ document.body.classList.toggle("dark");
+}
+</script>
+</body>
+</html>

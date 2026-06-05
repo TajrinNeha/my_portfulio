@@ -1,124 +1,932 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tajrin Rahman Neha | Portfolio</title>
+
+<title>Tajrin Rahman Neha | Premium Portfolio</title>
+
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;line-height:1.6;background:#f5f7fb;color:#222;transition:.3s}
-header{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;padding:80px 20px;text-align:center}
-nav{position:sticky;top:0;background:#111827;padding:12px;text-align:center}
-nav a{color:#fff;text-decoration:none;margin:0 12px}
-section{padding:50px 10%;}
-.card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1);margin-top:15px}
-h2{margin-bottom:15px;color:#1e3a8a}
-.skills .item{margin:12px 0}
-.bar{background:#ddd;height:18px;border-radius:20px}
-.fill{height:18px;border-radius:20px;background:#2563eb}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.project{background:#fff;padding:20px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.1)}
-.contact a{text-decoration:none;color:#2563eb}
-footer{text-align:center;background:#111827;color:#fff;padding:20px}
-button{padding:10px 16px;border:none;border-radius:8px;cursor:pointer}
-.dark{background:#121212;color:#eee}
-.dark .card,.dark .project{background:#1f2937;color:#fff}
-.dark h2{color:#60a5fa}
-.dark nav{background:#000}
+
+/* ================= GLOBAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#050816;
+    color:white;
+    overflow-x:hidden;
+}
+
+/* ================= BACKGROUND ================= */
+
+body::before{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#00f7ff22,transparent);
+    top:-200px;
+    left:-200px;
+    z-index:-10;
+}
+
+body::after{
+    content:'';
+    position:fixed;
+    width:700px;
+    height:700px;
+    background:radial-gradient(circle,#8b5cf622,transparent);
+    bottom:-200px;
+    right:-200px;
+    z-index:-10;
+}
+
+/* ================= NAVBAR ================= */
+
+nav{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    padding:20px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(0,0,0,0.25);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    z-index:1000;
+}
+
+.logo{
+    font-size:34px;
+    font-weight:800;
+    background:linear-gradient(45deg,#00f7ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.4s;
+    position:relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    width:0%;
+    height:2px;
+    background:#00f7ff;
+    left:0;
+    bottom:-5px;
+    transition:.4s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:130px 8%;
+    gap:60px;
+}
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h3{
+    color:#00f7ff;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.hero-text h1{
+    font-size:85px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero-text h1 span{
+    background:linear-gradient(45deg,#00f7ff,#8b5cf6);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:1.9;
+    margin-bottom:35px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:16px 35px;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.4s;
+}
+
+.btn-primary{
+    background:linear-gradient(45deg,#00f7ff,#8b5cf6);
+    color:white;
+    box-shadow:0 0 30px rgba(0,247,255,.3);
+}
+
+.btn-primary:hover{
+    transform:translateY(-7px);
+}
+
+.btn-outline{
+    border:2px solid #00f7ff;
+    color:white;
+}
+
+.btn-outline:hover{
+    background:#00f7ff;
+    color:black;
+}
+
+/* ================= HERO IMAGE ================= */
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:linear-gradient(45deg,#00f7ff,#8b5cf6);
+    filter:blur(45px);
+    opacity:.4;
+    border-radius:40px;
+    z-index:-1;
+}
+
+.hero-image img{
+    width:400px;
+    border-radius:35px;
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+    transform:translateY(0);
+}
+
+50%{
+    transform:translateY(-15px);
+}
+
+100%{
+    transform:translateY(0);
+}
+
+}
+
+/* ================= SECTION ================= */
+
+section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:70px;
+}
+
+.section-title h2{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.section-title p{
+    color:#94a3b8;
+}
+
+/* ================= GLASS EFFECT ================= */
+
+.glass{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,0.08);
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.about-card{
+    padding:40px;
+    border-radius:30px;
+    transition:.5s;
+}
+
+.about-card:hover{
+    transform:translateY(-12px);
+    border-color:#00f7ff;
+}
+
+.about-card i{
+    font-size:50px;
+    margin-bottom:20px;
+    color:#00f7ff;
+}
+
+.about-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* ================= SKILLS ================= */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.skill-card{
+    padding:35px;
+    border-radius:30px;
+    text-align:center;
+    transition:.5s;
+}
+
+.skill-card:hover{
+    transform:translateY(-12px);
+    border-color:#8b5cf6;
+}
+
+.skill-card i{
+    font-size:55px;
+    margin-bottom:20px;
+    color:#00f7ff;
+}
+
+.skill-card p{
+    color:#cbd5e1;
+}
+
+/* ================= PROJECTS ================= */
+
+.projects-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+    gap:35px;
+}
+
+.project-card{
+    border-radius:30px;
+    overflow:hidden;
+    transition:.5s;
+    position:relative;
+}
+
+.project-card:hover{
+    transform:translateY(-12px);
+    border-color:#00f7ff;
+    box-shadow:0 0 40px rgba(0,247,255,.15);
+}
+
+.project-image{
+    height:240px;
+    overflow:hidden;
+}
+
+.project-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.project-card:hover img{
+    transform:scale(1.1);
+}
+
+.project-content{
+    padding:30px;
+}
+
+.project-content h3{
+    margin-bottom:15px;
+}
+
+.project-content p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+.project-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.project-tags span{
+    padding:8px 18px;
+    border-radius:30px;
+    background:linear-gradient(45deg,#00f7ff,#8b5cf6);
+    font-size:13px;
+    font-weight:600;
+}
+
+/* ================= ACHIEVEMENTS ================= */
+
+.achievement-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.achievement-box{
+    padding:40px;
+    border-radius:30px;
+    text-align:center;
+    transition:.5s;
+}
+
+.achievement-box:hover{
+    transform:translateY(-12px);
+    border-color:#8b5cf6;
+}
+
+.achievement-box i{
+    font-size:55px;
+    margin-bottom:20px;
+    color:#00f7ff;
+}
+
+.achievement-box p{
+    color:#cbd5e1;
+    line-height:1.8;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.contact-card{
+    padding:35px;
+    border-radius:30px;
+    text-align:center;
+    transition:.5s;
+}
+
+.contact-card:hover{
+    transform:translateY(-12px);
+    border-color:#00f7ff;
+}
+
+.contact-card i{
+    font-size:45px;
+    margin-bottom:20px;
+    color:#00f7ff;
+}
+
+.contact-card a{
+    text-decoration:none;
+    color:white;
+}
+
+.contact-card p{
+    color:#cbd5e1;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    text-align:center;
+    padding:35px;
+    border-top:1px solid rgba(255,255,255,0.08);
+    color:#94a3b8;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+.hero{
+    flex-direction:column-reverse;
+    text-align:center;
+}
+
+.hero-text h1{
+    font-size:55px;
+}
+
+.hero-image img{
+    width:280px;
+}
+
+nav ul{
+    display:none;
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
+
+<!-- ================= NAVBAR ================= -->
+
 <nav>
-<a href="#about">About</a>
-<a href="#skills">Skills</a>
-<a href="#education">Education</a>
-<a href="#projects">Projects</a>
-<a href="#contact">Contact</a>
-<button onclick="toggleMode()">🌙</button>
+
+<div class="logo">TRN</div>
+
+<ul>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#achievement">Goals</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
 </nav>
 
-<header>
-<h1>Tajrin Rahman Neha</h1>
-<h3 id="typing"></h3>
-<p>CSE Student at Varendra University</p>
-</header>
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h3>Hello, I'm</h3>
+
+<h1>Tajrin Rahman <span>Neha</span></h1>
+
+<p id="typing">
+Aspiring Software Engineer | CSE Student at Varendra University | Java Developer | Web Development Enthusiast | Passionate About Problem Solving
+</p>
+
+<div class="hero-buttons">
+
+<a href="#projects" class="btn btn-primary">
+View Projects
+</a>
+
+<a href="#contact" class="btn btn-outline">
+Contact Me
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-image">
+
+<img src="pp.jpeg">
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
 
 <section id="about">
+
+<div class="section-title">
 <h2>About Me</h2>
-<div class="card">
-I am Tajrin Rahman Neha, a Computer Science and Engineering student at Varendra University. I am passionate about software development, problem solving, web technologies and continuous learning.
+<p>Creative Developer & Future Software Engineer</p>
 </div>
+
+<div class="about-grid">
+
+<div class="about-card glass">
+<i class="fa-solid fa-user"></i>
+<h3>Who Am I?</h3>
+<p>
+I'm Tajrin Rahman Neha, a passionate CSE student who loves programming, UI design, and innovative technologies.
+</p>
+</div>
+
+<div class="about-card glass">
+<i class="fa-solid fa-code"></i>
+<h3>What I Do?</h3>
+<p>
+I create modern websites, software systems, networking projects, and AI-based applications.
+</p>
+</div>
+
+<div class="about-card glass">
+<i class="fa-solid fa-rocket"></i>
+<h3>Career Goal</h3>
+<p>
+My goal is to become a successful Software Engineer and contribute to future technologies.
+</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="skills" class="skills">
-<h2>Skills</h2>
-<div class="card">
-<div class="item">Java<div class="bar"><div class="fill" style="width:90%"></div></div></div>
-<div class="item">C++<div class="bar"><div class="fill" style="width:85%"></div></div></div>
-<div class="item">Python<div class="bar"><div class="fill" style="width:80%"></div></div></div>
-<div class="item">HTML/CSS<div class="bar"><div class="fill" style="width:90%"></div></div></div>
-<div class="item">JavaScript<div class="bar"><div class="fill" style="width:75%"></div></div></div>
-<div class="item">PHP<div class="bar"><div class="fill" style="width:70%"></div></div></div>
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+<div class="section-title">
+<h2>Technical Skills</h2>
+<p>Technologies I work with</p>
 </div>
+
+<div class="skills">
+
+<div class="skill-card glass">
+<i class="fa-brands fa-java"></i>
+<h3>Java</h3>
+<p>Desktop Application Development</p>
+</div>
+
+<div class="skill-card glass">
+<i class="fa-brands fa-python"></i>
+<h3>Python</h3>
+<p>AI & Problem Solving</p>
+</div>
+
+<div class="skill-card glass">
+<i class="fa-brands fa-html5"></i>
+<h3>HTML / CSS</h3>
+<p>Responsive Website Design</p>
+</div>
+
+<div class="skill-card glass">
+<i class="fa-brands fa-js"></i>
+<h3>JavaScript</h3>
+<p>Interactive Websites</p>
+</div>
+
+<div class="skill-card glass">
+<i class="fa-solid fa-database"></i>
+<h3>SQL & PHP</h3>
+<p>Backend & Database Management</p>
+</div>
+
+<div class="skill-card glass">
+<i class="fa-solid fa-network-wired"></i>
+<h3>Networking</h3>
+<p>Topology Design & Simulation</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="education">
-<h2>Education</h2>
-<div class="card">
-<h3>Varendra University</h3>
-<p>B.Sc. in Computer Science & Engineering (CSE)</p>
-</div>
-</section>
+<!-- ================= PROJECTS ================= -->
 
 <section id="projects">
-<h2>Projects</h2>
-<div class="projects">
-<div class="project"><h3>Student Management System</h3><p>Java-based application.</p></div>
-<div class="project"><h3>Portfolio Website</h3><p>Responsive personal portfolio.</p></div>
-<div class="project"><h3>Task Management App</h3><p>Task organizer using Java.</p></div>
-<div class="project"><h3>DSP Academic Project</h3><p>Signal processing related project.</p></div>
+
+<div class="section-title">
+<h2>Featured Projects</h2>
+<p>Creative and Innovative Projects</p>
 </div>
+
+<div class="projects-container">
+
+<!-- PROJECT 1 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>HopeAura</h3>
+<p>Disaster Relief E-Commerce Platform helping victims during emergencies.</p>
+
+<div class="project-tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 2 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Student Management System</h3>
+<p>Java-based desktop application for managing students and attendance.</p>
+
+<div class="project-tags">
+<span>Java</span>
+<span>MySQL</span>
+<span>OOP</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 3 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Smart Blood Donation System</h3>
+<p>Emergency blood donation platform connecting donors and patients.</p>
+
+<div class="project-tags">
+<span>PHP</span>
+<span>Database</span>
+<span>Web App</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 4 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Face Recognition Attendance</h3>
+<p>AI-based attendance management system using face recognition.</p>
+
+<div class="project-tags">
+<span>Python</span>
+<span>AI</span>
+<span>OpenCV</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 5 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Flood Prediction & Alert System</h3>
+<p>Smart flood alert system using weather and sensor analysis.</p>
+
+<div class="project-tags">
+<span>IoT</span>
+<span>Python</span>
+<span>Sensors</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 6 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Network Topology Design</h3>
+<p>Design and simulation of modern secure network systems.</p>
+
+<div class="project-tags">
+<span>Cisco</span>
+<span>Networking</span>
+<span>Simulation</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 7 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Noise Reduction in Audio Signal</h3>
+<p>DSP-based project for removing unwanted audio noise.</p>
+
+<div class="project-tags">
+<span>DSP</span>
+<span>MATLAB</span>
+<span>Signal</span>
+</div>
+
+</div>
+</div>
+
+<!-- PROJECT 8 -->
+
+<div class="project-card glass">
+<div class="project-image">
+<img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=1200">
+</div>
+
+<div class="project-content">
+<h3>Personal Portfolio Website</h3>
+<p>Modern animated portfolio website with futuristic UI design.</p>
+
+<div class="project-tags">
+<span>HTML</span>
+<span>CSS</span>
+<span>JavaScript</span>
+</div>
+
+</div>
+</div>
+
+</div>
+
 </section>
 
-<section>
-<h2>Achievements</h2>
-<div class="card">
-<ul>
-<li>Completed multiple academic programming projects.</li>
-<li>Learning software engineering and web development.</li>
-<li>Strong interest in Java programming and problem solving.</li>
-</ul>
+<!-- ================= ACHIEVEMENT ================= -->
+
+<section id="achievement">
+
+<div class="section-title">
+<h2>Achievements & Goals</h2>
+<p>Passion, Creativity & Future Vision</p>
 </div>
+
+<div class="achievement-container">
+
+<div class="achievement-box glass">
+<i class="fa-solid fa-code"></i>
+<h3>Programming Passion</h3>
+<p>Passionate about coding and solving real-world problems.</p>
+</div>
+
+<div class="achievement-box glass">
+<i class="fa-solid fa-lightbulb"></i>
+<h3>Creative Thinking</h3>
+<p>Always creating innovative ideas and smart solutions.</p>
+</div>
+
+<div class="achievement-box glass">
+<i class="fa-solid fa-rocket"></i>
+<h3>Future Dream</h3>
+<p>Dreaming of becoming a successful Software Engineer.</p>
+</div>
+
+</div>
+
 </section>
 
-<section id="contact" class="contact">
-<h2>Contact</h2>
-<div class="card">
-<p>Email: <a href="mailto:Tajrin.neha15@gmail.com">Tajrin.neha15@gmail.com</a></p>
-<p>Phone: 01852680720</p>
-<p>University: Varendra University</p>
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+<div class="section-title">
+<h2>Contact Me</h2>
+<p>Let's create something amazing together</p>
 </div>
+
+<div class="contact">
+
+<div class="contact-card glass">
+<i class="fa-solid fa-envelope"></i>
+<h3>Email</h3>
+<a href="mailto:Tajrin.neha15@gmail.com">
+Tajrin.neha15@gmail.com
+</a>
+</div>
+
+<div class="contact-card glass">
+<i class="fa-brands fa-github"></i>
+<h3>GitHub</h3>
+<a href="https://github.com/TajrinNeha" target="_blank">
+@TajrinNeha
+</a>
+</div>
+
+<div class="contact-card glass">
+<i class="fa-brands fa-facebook"></i>
+<h3>Facebook</h3>
+<p>Tajrin Rahman Neha</p>
+</div>
+
+<div class="contact-card glass">
+<i class="fa-solid fa-graduation-cap"></i>
+<h3>University</h3>
+<p>Varendra University</p>
+</div>
+
+</div>
+
 </section>
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
-© 2026 Tajrin Rahman Neha | Portfolio Website
+
+© 2026 Tajrin Rahman Neha | Premium Futuristic Portfolio
+
 </footer>
 
-<script>
-const txt="Java Developer | Web Development Enthusiast | CSE Student";
-let i=0;
-function type(){
- if(i<txt.length){
-  document.getElementById("typing").innerHTML+=txt.charAt(i);
-  i++;
-  setTimeout(type,80);
- }
-}
-type();
+<!-- ================= TYPING EFFECT ================= -->
 
-function toggleMode(){
- document.body.classList.toggle("dark");
+<script>
+
+const texts = [
+
+"Aspiring Software Engineer",
+"Java Developer",
+"Creative Designer",
+"Web Development Enthusiast",
+"Problem Solver",
+"CSE Student"
+
+];
+
+let count = 0;
+let index = 0;
+let currentText = "";
+let letter = "";
+
+(function type(){
+
+if(count === texts.length){
+count = 0;
 }
+
+currentText = texts[count];
+
+letter = currentText.slice(0, ++index);
+
+document.getElementById("typing").textContent = letter;
+
+if(letter.length === currentText.length){
+
+count++;
+index = 0;
+
+}
+
+setTimeout(type,120);
+
+})();
+
 </script>
+
 </body>
 </html>
